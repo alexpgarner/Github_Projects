@@ -1,0 +1,8 @@
+http://www.strava.com/oauth/authorize?client_id=101662&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read_all
+
+code: 8d7728bc6ea95cd3125e54cb00a1c3c1a3f5098d
+
+https://www.strava.com/oauth/token?client_id=101662&client_secret=209a2403d1d6334bfaa4cb0c259bf96503a65735&code=8d7728bc6ea95cd3125e54cb00a1c3c1a3f5098d&grant_type=authorization_code
+
+ "refresh_token": "878567d19cee77357936e2f674feb1b14e1b9a06",
+ "access_token": "c605234e2a91d3743897d05187395c0ee4856cf5",
