@@ -1,0 +1,42 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.circle {
+  transition-property: width, height;
+  transition-duration: 2s;
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: red;
+  border-radius: 50%;
+
+  width: 0px;
+  height: 0px;
+  top: 150px;
+  left: 150px;
+
+  
+}
+
+.message-ball{
+  text-align:center;
+  line-height: 200px;
+  font-size: 20px;
+}
