@@ -143,22 +143,52 @@
 //     div.textContent = "Hello, world!";
 //   });
 
-function showCircle(cx, cy, radius){
-    return new Promise(function(resolve){
-        let circle = document.querySelector('div.circle')
-        circle.style.width = `${radius*2}px`
-        circle.style.height = `${radius*2}px`
-        circle.style.top = `${cy}px`
-        circle.style.left = `${cx}px`
-        circle.style["line-height"] = `${2*radius}px`
-        circle.addEventListener('transitionend',function handler(){
-            resolve(circle);
-            circle.removeEventListener('transistionend',handler);
-        })
-    });    
+// function showCircle(cx, cy, radius){
+//     return new Promise(function(resolve){
+//         let circle = document.querySelector('div.circle')
+//         circle.style.width = `${radius*2}px`
+//         circle.style.height = `${radius*2}px`
+//         circle.style.top = `${cy}px`
+//         circle.style.left = `${cx}px`
+//         circle.style["line-height"] = `${2*radius}px`
+//         circle.addEventListener('transitionend',function handler(){
+//             resolve(circle);
+//             circle.removeEventListener('transistionend',handler);
+//         })
+//     });    
+// }
+// //showCircle now returns a Promise object that resolves with div.circle element that .then adds .message-ball class and text Hello World
+// showCircle(150, 150, 100).then(div => {
+//     div.classList.add('message-ball');
+//     div.append("Hello, world!");
+//   });
+
+//Rewrite this example code from the chapter Promises chaining using async/await instead of .then/catch:
+// function loadJson(url) {
+//     return fetch(url)
+//       .then(response => {
+//         if (response.status == 200) {
+//           return response.json();
+//         } else {
+//           throw new Error(response.status);
+//         }
+//       });
+//   }
+  
+  loadJson('https://javascript.info/no-such-user.json')
+    .catch(alert); // Error: 404
+
+async function loadJson(url){
+    let response = await fetch(url);
+    if(response.status == 200){
+        return response.json();
+    }else{
+        throw new Error(response.status)
+    }
 }
-//showCircle now returns a Promise object that resolves with div.circle element that .then adds .message-ball class and text Hello World
-showCircle(150, 150, 100).then(div => {
-    div.classList.add('message-ball');
-    div.append("Hello, world!");
-  });
+
+// try{
+//     console.log(loadJson('https://javascript.info/no-such-user.json'));
+// }catch(err){
+//     console.log(err)
+// }
